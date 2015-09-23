@@ -15,7 +15,6 @@
         android:id="@+id/grid_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
         android:background="@android:color/background_dark"
         android:padding="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Subhead.Inverse"/>
