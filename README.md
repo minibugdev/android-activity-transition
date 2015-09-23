@@ -3,4 +3,4 @@ Try to implement Android activity transition with ActivityCompat require Android
 
 
 ## Screen Shot
-<img src="https://github.com/minibugdev/android-activity-transition/blob/master/screenshot.gif?raw=true" alt="Android Activity Transition Example" width="400" />
+<img src="https://github.com/minibugdev/android-activity-transition/blob/master/screenshot.gif?raw=true" alt="Android Activity Transition Example" width="300" />
