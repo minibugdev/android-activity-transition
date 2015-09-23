@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ActivityTransition</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="image_transition">image_transition</string>
+</resources>
