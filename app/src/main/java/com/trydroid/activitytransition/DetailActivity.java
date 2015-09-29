@@ -33,8 +33,8 @@ public class DetailActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        TextView textView = (TextView) findViewById(R.id.detail_text);
         ImageView imageView = (ImageView) findViewById(R.id.detail_image);
+        TextView textView = (TextView) findViewById(R.id.detail_text);
 
         ViewCompat.setTransitionName(imageView, TRANSITION_IMAGE);
         ViewCompat.setTransitionName(textView, TRANSITION_TEXT);
