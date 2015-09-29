@@ -18,6 +18,9 @@ import com.squareup.picasso.Picasso;
 import com.trydroid.activitytransition.model.Item;
 
 public class DetailActivity extends AppCompatActivity {
+    public static final String TRANSITION_IMAGE = "transition:image";
+    public static final String TRANSITION_TEXT  = "transition:text";
+
     public static final String EXTRA_IMAGE = "DetailActivity:image";
     public static final String EXTRA_TEXT  = "DetailActivity:text";
 
@@ -31,13 +34,17 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         TextView textView = (TextView) findViewById(R.id.detail_text);
-        ViewCompat.setTransitionName(textView, EXTRA_TEXT);
-        textView.setText(getIntent().getStringExtra(EXTRA_TEXT));
-
         ImageView imageView = (ImageView) findViewById(R.id.detail_image);
-        ViewCompat.setTransitionName(imageView, EXTRA_IMAGE);
+
+        ViewCompat.setTransitionName(imageView, TRANSITION_IMAGE);
+        ViewCompat.setTransitionName(textView, TRANSITION_TEXT);
+
+        String url = getIntent().getStringExtra(EXTRA_IMAGE);
+        String text = getIntent().getStringExtra(EXTRA_TEXT);
+
+        textView.setText(text);
         Picasso.with(this)
-            .load(getIntent().getStringExtra(EXTRA_IMAGE))
+            .load(url)
             .into(imageView);
     }
 
