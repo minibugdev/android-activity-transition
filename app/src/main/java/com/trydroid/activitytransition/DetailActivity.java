@@ -64,8 +64,8 @@ public class DetailActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_IMAGE, item.getUrl());
         intent.putExtra(EXTRA_TEXT, item.getText());
 
-        Pair<View, String> imageTransitionView = Pair.create(imageView, EXTRA_IMAGE);
-        Pair<View, String> textTransitionView = Pair.create(textView, EXTRA_TEXT);
+        Pair<View, String> imageTransitionView = Pair.create(imageView, TRANSITION_IMAGE);
+        Pair<View, String> textTransitionView = Pair.create(textView, TRANSITION_TEXT);
 
         ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, imageTransitionView, textTransitionView);
         ActivityCompat.startActivity(activity, intent, options.toBundle());
