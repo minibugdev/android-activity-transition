@@ -24,6 +24,18 @@ public class DetailActivity extends AppCompatActivity {
     public static final String EXTRA_IMAGE = "DetailActivity:image";
     public static final String EXTRA_TEXT  = "DetailActivity:text";
 
+    public static void launch(Activity activity, View imageView, View textView, Item item) {
+        Intent intent = new Intent(activity, DetailActivity.class);
+        intent.putExtra(EXTRA_IMAGE, item.getUrl());
+        intent.putExtra(EXTRA_TEXT, item.getText());
+
+        Pair<View, String> imageTransitionView = Pair.create(imageView, TRANSITION_IMAGE);
+        Pair<View, String> textTransitionView = Pair.create(textView, TRANSITION_TEXT);
+
+        ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, imageTransitionView, textTransitionView);
+        ActivityCompat.startActivity(activity, intent, options.toBundle());
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,17 +69,5 @@ public class DetailActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    public static void launch(Activity activity, View imageView, View textView, Item item) {
-        Intent intent = new Intent(activity, DetailActivity.class);
-        intent.putExtra(EXTRA_IMAGE, item.getUrl());
-        intent.putExtra(EXTRA_TEXT, item.getText());
-
-        Pair<View, String> imageTransitionView = Pair.create(imageView, TRANSITION_IMAGE);
-        Pair<View, String> textTransitionView = Pair.create(textView, TRANSITION_TEXT);
-
-        ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, imageTransitionView, textTransitionView);
-        ActivityCompat.startActivity(activity, intent, options.toBundle());
     }
 }
